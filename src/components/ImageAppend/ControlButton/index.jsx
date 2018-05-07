@@ -1,6 +1,13 @@
+// @flow
 import React, { Component } from 'react'
 
-class ControlButton extends Component {
+type Props = {
+  increment: number,
+  text: string,
+  onButtonClick: (x: number) => void,
+}
+
+class ControlButton extends Component<Props> {
   onClickHandler = () => {
     const { increment, onButtonClick } = this.props
     onButtonClick(increment)

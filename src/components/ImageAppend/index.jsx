@@ -1,3 +1,4 @@
+// @flow
 /* eslint-disable react/no-unused-state */
 import React, { Component } from 'react'
 
@@ -6,12 +7,16 @@ import Counter from './Counter'
 import ControlButton from './ControlButton'
 import ImageHolder from './ImageHolder'
 
-class ImageAppend extends Component {
+type State = {
+  index: number,
+}
+
+class ImageAppend extends Component<null, State> {
   state = {
     index: 1,
   }
 
-  onButtonClickHandler = inc => {
+  onButtonClickHandler = (inc: number) => {
     this.setState(changeCounter(inc))
   }
 
