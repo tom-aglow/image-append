@@ -1,5 +1,5 @@
-import React, { Component } from 'react';
-import { Consumer } from '..';
+import React, { Component } from 'react'
+import { Consumer } from '..'
 
 class Counter extends Component {
   render() {
@@ -7,8 +7,8 @@ class Counter extends Component {
       <div>
         <Consumer>{({ index }) => index}</Consumer>
       </div>
-    );
+    )
   }
 }
 
-export default Counter;
+export default Counter

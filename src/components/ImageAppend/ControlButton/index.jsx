@@ -1,10 +1,10 @@
-import React, { Component } from 'react';
-import { Consumer } from '..';
+import React, { Component } from 'react'
+import { Consumer } from '..'
 
 class ControlButton extends Component {
   foo = cb => () => {
-    cb(this.props.increment);
-  };
+    cb(this.props.increment)
+  }
 
   render() {
     return (
@@ -15,8 +15,8 @@ class ControlButton extends Component {
           </button>
         )}
       </Consumer>
-    );
+    )
   }
 }
 
-export default ControlButton;
+export default ControlButton

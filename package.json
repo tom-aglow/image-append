@@ -8,6 +8,7 @@
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject",
     "lint": "eslint . --ext .js,.jsx --quiet",
+    "format": "prettier --write \"src/**/*.{js,jsx}\"",
     "precommit": "lint-staged"
   },
   "dependencies": {
