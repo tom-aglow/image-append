@@ -1,14 +1,5 @@
-import React, { Component } from 'react'
-import { Consumer } from '..'
+import React from 'react'
 
-class Counter extends Component {
-  render() {
-    return (
-      <div>
-        <Consumer>{({ index }) => index}</Consumer>
-      </div>
-    )
-  }
-}
+const Counter = ({ index }) => <div>{index}</div>
 
 export default Counter

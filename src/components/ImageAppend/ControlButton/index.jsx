@@ -1,21 +1,14 @@
 import React, { Component } from 'react'
-import { Consumer } from '..'
 
 class ControlButton extends Component {
-  foo = cb => () => {
-    cb(this.props.increment)
+  onClickHandler = () => {
+    const { increment, onButtonClick } = this.props
+    onButtonClick(increment)
   }
 
   render() {
-    return (
-      <Consumer>
-        {({ onButtonClick }) => (
-          <button onClick={this.foo(onButtonClick)}>
-            {this.props.children}
-          </button>
-        )}
-      </Consumer>
-    )
+    const { text } = this.props
+    return <button onClick={this.onClickHandler}>{text}</button>
   }
 }
 

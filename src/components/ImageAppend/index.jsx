@@ -1,35 +1,39 @@
-/* eslint-disable react/no-unused-state, react/sort-comp */
+/* eslint-disable react/no-unused-state */
 import React, { Component } from 'react'
 
 import { changeCounter } from './utils'
 import Counter from './Counter'
 import ControlButton from './ControlButton'
-
-const initialState = { index: 1, onButtonClick: () => {} }
-const { Provider, Consumer } = React.createContext(initialState)
+import ImageHolder from './ImageHolder'
 
 class ImageAppend extends Component {
+  state = {
+    index: 1,
+  }
+
   onButtonClickHandler = inc => {
     this.setState(changeCounter(inc))
   }
 
-  state = {
-    ...initialState,
-    onButtonClick: this.onButtonClickHandler,
-  }
-
   render() {
+    const { index } = this.state
     return (
       <div>
-        <Provider value={this.state}>
-          <Counter />
-          <ControlButton increment={-1}>-</ControlButton>
-          <ControlButton increment={1}>+</ControlButton>
-        </Provider>
+        <ImageHolder num={index} />
+        <Counter index={index} />
+        <ControlButton
+          increment={-1}
+          onButtonClick={this.onButtonClickHandler}
+          text="-"
+        />
+        <ControlButton
+          increment={1}
+          onButtonClick={this.onButtonClickHandler}
+          text="+"
+        />
       </div>
     )
   }
 }
 
 export default ImageAppend
-export { Consumer }

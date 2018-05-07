@@ -1,0 +1,8 @@
+.ImageHolder {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.Image {
+  width: 100px;
+}
