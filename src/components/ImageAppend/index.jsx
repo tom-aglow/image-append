@@ -1,6 +1,7 @@
 /* eslint-disable react/no-unused-state, react/sort-comp */
 import React, { Component } from 'react'
 
+import { changeCounter } from './utils'
 import Counter from './Counter'
 import ControlButton from './ControlButton'
 
@@ -9,7 +10,7 @@ const { Provider, Consumer } = React.createContext(initialState)
 
 class ImageAppend extends Component {
   onButtonClickHandler = inc => {
-    this.setState(prevState => ({ index: prevState.index + inc }))
+    this.setState(changeCounter(inc))
   }
 
   state = {
